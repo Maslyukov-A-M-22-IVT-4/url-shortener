@@ -1,0 +1,15 @@
+with-expecter: true
+mockname: "{{.InterfaceName}}"
+filename: "{{.MockName}}.go"
+outpkg: mocks
+packages:
+  url-shortener/internal/http-server/handlers/url/save:
+    interfaces:
+      URLSaver:
+        config:
+          dir: "{{.InterfaceDir}}/mocks"
+  url-shortener/internal/http-server/handlers/url/redirect:
+    interfaces:
+      URLGetter:
+        config:
+          dir: "{{.InterfaceDir}}/mocks"
